@@ -1,0 +1,4 @@
+what are the entrees (for/at/in) {dc} (/(/dining) hall/dining commons/DC)
+what (/the) entrees are (for/at/in) {dc} (/(/dining) hall/dining commons/DC)
+what's (/on) the menu (for/at/in) {dc} (/(/dining) hall/dining commons/DC)
+what's (can I/there to) eat (at/in) {dc} (/(/dining) hall/dining commons/DC)

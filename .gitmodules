@@ -1,0 +1,3 @@
+[submodule "flask-ask"]
+	path = flask-ask
+	url = git@github.com:mattrossman/flask-ask.git
