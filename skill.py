@@ -3,11 +3,19 @@ import os
 
 from flask import Flask
 from flask_ask import Ask, request, session, question, statement
-
+from umass_toolkit.dining import get_menu
 
 app = Flask(__name__)
 ask = Ask(app, "/")
 logging.getLogger('flask_ask').setLevel(logging.DEBUG)
+
+dc_names = {
+    '1': 'Worcester',
+    '2': 'Franklin',
+    '3': 'Hampshire',
+    '4': 'Berkshire'
+}
+
 
 @ask.launch
 def launch():
@@ -23,7 +31,9 @@ def hello_world():
 
 @ask.intent('EntreesIntent', types={'dc': 'slot'})
 def get_entrees(dc):
-    speech_text = 'Here are the entrees for %s dining hall' % str(dc.id)
+    entrees = [meal for meal in get_menu(1) if meal['category-name'] == 'Entrees']
+    speech_text = "Here are today's entrees for %s dining hall: " % dc_names[dc.id]
+    speech_text += ', '.join([meal['dish-name'] for meal in entrees])
     return statement(speech_text).simple_card('UMenu', speech_text)
 
 

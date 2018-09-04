@@ -1,3 +1,6 @@
 [submodule "flask-ask"]
 	path = flask-ask
 	url = git@github.com:mattrossman/flask-ask.git
+[submodule "umass-toolkit"]
+	path = umass-toolkit
+	url = git@github.com:simon-andrews/umass-toolkit.git
